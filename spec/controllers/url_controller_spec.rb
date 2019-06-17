@@ -27,8 +27,17 @@ RSpec.describe UrlsController, type: :controller do
 
   describe 'GET #redirect' do
     it 'assigns the requested url to @url' do
-      get :redirect, params: { short_url: url.short}
+      get :redirect, params: { short_url: url.short }
       expect(assigns(:url)).to eq url
+    end
+
+    it 'increases the click_count when visiting the short url' do
+      expect(url.clicks_count).to eq(0)
+
+      get :redirect, params: { short_url: url.short }
+
+      expect(assigns(:url)).to eq url
+      expect(assigns(:url).clicks_count).to eq(1)
     end
 
     it 'redirects to the original url' do

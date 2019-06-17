@@ -6,6 +6,11 @@ class Url < ApplicationRecord
 
   before_create :generate_short_url
 
+  def increase_counter
+    self.clicks_count += 1
+    save!
+  end
+
   private
 
   def generate_short_url

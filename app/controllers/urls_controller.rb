@@ -8,7 +8,7 @@ class UrlsController < ApplicationController
     @url = Url.find_by_short(params[:short_url])
 
     if @url
-      #url.increase_counter
+      @url.increase_counter
       redirect_to @url.original, status: 302
     else
       flash.now[:alert] = 'The given URL does not exist!'
