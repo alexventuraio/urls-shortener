@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_200701) do
     t.string "original"
     t.string "short"
     t.string "title"
-    t.integer "clicks_count"
+    t.integer "clicks_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
