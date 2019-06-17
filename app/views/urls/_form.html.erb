@@ -1,0 +1,16 @@
+<%= form_with(model: url, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :original, 'Your original URL:' %>
+    <%= form.text_field :original, placeholder: 'Type your URL' %>
+    <%= form.submit  'Shorten!'%>
+  </div>
+<% end %>
+
+<%- if @saved_url %>
+  <p class="center mid-text">
+    Your shortened url is:
+    <b>
+      <%= @saved_url %>
+    </b>
+  </p>
+<% end %>

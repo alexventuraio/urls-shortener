@@ -1,0 +1,29 @@
+<h1>New Url</h1>
+
+<%= render 'form', url: @url %>
+
+<h1>Top 100 visited URLs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original</th>
+      <th>Short</th>
+      <th>Title</th>
+      <th>Clicks count</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.original %></td>
+        <td><%= url.short %></td>
+        <td><%= url.title %></td>
+        <td><%= url.clicks_count %></td>
+        <td><%= link_to 'Go to site', url.short %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
