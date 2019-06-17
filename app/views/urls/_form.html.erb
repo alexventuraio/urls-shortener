@@ -1,4 +1,4 @@
-<%= form_with(model: url, local: true) do |form| %>
+<%= form_with(model: @url, local: true) do |form| %>
   <div class="field">
     <%= form.label :original, 'Your original URL:' %>
     <%= form.text_field :original, placeholder: 'Type your URL' %>
