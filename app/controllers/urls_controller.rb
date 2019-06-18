@@ -33,7 +33,6 @@ class UrlsController < ApplicationController
 
   def set_urls
     @urls = Url.all
-    @url = Url.new
   end
 
   def url_params
