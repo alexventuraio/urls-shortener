@@ -29,5 +29,8 @@ module UrlsShortener
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Configure the Rails queue back-end adapter to handle background processing
+    config.active_job.queue_adapter = Rails.env.production? ? :sidekiq : :async
   end
 end
