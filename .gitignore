@@ -25,3 +25,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Environment variables file
+/.env
+
+# Rails DB file
+config/database.yml
