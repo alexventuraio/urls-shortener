@@ -7,7 +7,7 @@ RSpec.describe UrlsController, type: :controller do
     subject { get :index }
 
     it 'assigns a new Url instance to @url' do
-      urls = Url.all
+      urls = Url.all.order(clicks_count: :desc)
       get :index
       #expect(assigns(:url)).to be_a_new(Url)
       expect(assigns(:urls)).to all(be_a(Url))
