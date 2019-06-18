@@ -20,6 +20,7 @@ class UrlsController < ApplicationController
     url = Url.find_or_create_by(original: url_params[:original])
 
     if url.persisted?
+      CrawlSiteTitleJob.perform_later(url.id)
       @saved_url = "#{request.base_url}/#{url.short}"
       flash.now[:notice] = 'Your shortened URL has been created!'
     else
