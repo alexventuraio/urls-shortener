@@ -33,7 +33,7 @@ class UrlsController < ApplicationController
   private
 
   def set_urls
-    @urls = Url.all
+    @urls = Url.all.order(clicks_count: :desc)
   end
 
   def url_params
