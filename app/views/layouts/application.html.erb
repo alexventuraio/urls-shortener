@@ -10,7 +10,13 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/flash_messages' %>
-    <%= yield %>
+    <header>
+    </header>
+    <main>
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
+    </main>
+    <footer class="bg-light">
+    </footer>
   </body>
 </html>

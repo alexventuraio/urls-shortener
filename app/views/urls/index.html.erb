@@ -1,29 +1,37 @@
-<h1>New Url</h1>
+<div class="jumbotron jumbotron-fluid bg-secondary text-white">
+  <div class="mx-5">
+  <h1 class="display-1">Shrink your links!!!</h1>
+  <p class="lead">A simple URL shortener to make your life easier!</p>
+  <hr class="my-4">
 
-<%= render 'form', url: @url %>
+  <%= render 'form', url: @url %>
+</div>
+</div>
 
-<h1>Top 100 visited URLs</h1>
+<div class=container>
+  <h1>Top 100 visited URLs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Original</th>
-      <th>Short</th>
-      <th>Title</th>
-      <th>Clicks count</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @urls.each do |url| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= url.original %></td>
-        <td><%= url.short %></td>
-        <td><%= url.title %></td>
-        <td><%= url.clicks_count %></td>
-        <td><%= link_to 'Go to site', url.short %></td>
+        <th>Original</th>
+        <th>Short</th>
+        <th>Title</th>
+        <th>Clicks count</th>
+        <th colspan="1"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @urls.each do |url| %>
+        <tr>
+          <td><%= url.original %></td>
+          <td><%= url.short %></td>
+          <td><%= url.title %></td>
+          <td><%= url.clicks_count %></td>
+          <td><%= link_to 'Go to site', url.short %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

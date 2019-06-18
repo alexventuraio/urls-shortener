@@ -1,16 +1,22 @@
-<%= form_with(model: Url.new, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :original, 'Your original URL:' %>
-    <%= form.text_field :original, placeholder: 'Type your URL' %>
-    <%= form.submit  'Shorten!'%>
-  </div>
-<% end %>
+<div class="row mt-5">
+  <div class="col-10 col-sm-6 col-lg-6 ml-auto mr-auto">
+    <%= form_with(model: Url.new, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.text_field :original, placeholder: 'Type your original URL you want to short...',
+          class: 'form-control' %>
+      </div>
+      <div class="d-flex justify-content-center my-4 actions">
+        <%= form.submit 'Shorten!', class: 'btn btn-info btn-lg ml-2' %>
+      </div>
+    <% end %>
 
-<%- if @saved_url %>
-  <p class="center mid-text">
-    Your shortened url is:
-    <b>
-      <%= @saved_url %>
-    </b>
-  </p>
-<% end %>
+    <%- if @saved_url %>
+      <p class="text-center">
+        Your shortened url is:
+        <h4 class="text-center">
+          <%= @saved_url %>
+        </h4>
+      </p>
+    <% end %>
+  </div>
+</div>
