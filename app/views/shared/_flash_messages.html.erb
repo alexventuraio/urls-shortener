@@ -1,7 +1,11 @@
 <%- if alert %>
-  <p class="flash alert"><%= alert %></p>
+  <div class="alert alert-warning" role="alert">
+    <%= alert %>
+  </div>
 <% end %>
 
 <%- if notice %>
-  <p class="flash notice"><%= notice %></p>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
 <% end %>

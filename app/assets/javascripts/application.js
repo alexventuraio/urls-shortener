@@ -16,3 +16,12 @@
 //= require jquery3
 //= require bootstrap-sprockets
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+  /* Dismissable flash notifications and alerts on time out */
+  setTimeout(function() {
+    $('.alert').fadeOut(350, function() {
+      $(this).remove();
+    });
+  }, 2000);
+});
