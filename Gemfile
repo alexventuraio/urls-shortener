@@ -45,6 +45,8 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
   gem 'shoulda-matchers', '~> 4.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
+  # For setting up Environment variables
+  gem 'dotenv-rails', '~> 2.4'
 end
 
 group :development do
